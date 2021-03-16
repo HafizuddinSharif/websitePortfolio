@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hafizuddin Sharif</title>
   </head>
+
+  <style type="text/css">
+      
+    .special {
+      opacity: 0;
+      transition: opacity 1.0s ease-in;
+    }
+
+  </style>
+
   <body class="bg-gray-100">
 
     <!-- NAVIGATION BAR -->
@@ -18,17 +28,14 @@
     </div>
 
     <!-- INTRODUCTION SECTION -->
-    <div class="text-center lg:flex py-56" id="introduction">
-      <div class="p-3 inline-block lg:flex lg:m-auto bg-gray-300 rounded-lg shadow-lg">
+    <div class="text-center h-screen lg:flex " id="introduction">
+      <div class="m-auto w-1/2">
         <div class="text-center">
-          <img class="w-40 rounded-full object-contain inline-block lg:flex lg:mx-5 py-2 " src="src/my_pic.jpg" alt="My picture">
+          <img class="w-1/2 mx-auto" src="src/visual-data-pana.svg" alt="My picture">
         </div>
         <div class="my-auto text-center">
-          <p class="block text-gray-700 text-xl lg:text-left">Hi there, my name is</p>
-          <p class="block text-gray-700 text-2xl font-serif font-bold lg:text-left">Hafizuddin Sharif</p>
-          <p class="block text-gray-700 text-xl lg:text-left">an aspiring developer</p>
-          <p class="block text-gray-700 text-xl lg:text-left">a graphic designer</p>
-          <p class="block text-gray-700 text-xl lg:text-left">a learner</p>
+          <p class="block text-gray-700 text-xl lg:text-left">Hi!, I am</p>
+          <p class="w-full block text-gray-700 text-2xl font-serif font-bold lg:text-left" id="personal-title">Hafizuddin Sharif</p>
         </div>
       </div>
     </div>
@@ -85,6 +92,34 @@
     <div class="text-center bg-gray-500" id="footer">
       <p class="text-white py-3">Hafizuddin Sharif 2020</p>
     </div>
+
+    
+
+    <script>
+      var personalTitle = document.getElementById("personal-title")
+      personalTitle.classList.add('special')
+    
+      var count = 0
+
+      var title = ["Hafizuddin Sharif", "a student", "a volleyball player", "a youtuber"]
+
+      setInterval(function () {
+        personalTitle.style.opacity = 1
+        personalTitle.innerHTML = title[count]
+        
+        if (count < title.length-1) {
+          count = count + 1
+        } else {
+          count = 0
+        }
+
+        setTimeout( () => {
+          personalTitle.style.opacity = 0
+        } , 2000)
+        
+      }, 3000)
+      
+    </script>
 
   </body>
 </html>
