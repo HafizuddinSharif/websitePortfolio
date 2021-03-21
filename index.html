@@ -4,15 +4,81 @@
     <meta charset="utf-8">
     <link rel="icon" href="src/favicon.ico" />
     <link rel="stylesheet" href="public/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hafizuddin Sharif</title>
   </head>
 
   <style type="text/css">
       
-    .special {
+    .fade {
       opacity: 0;
       transition: opacity 1.0s ease-in;
+    }
+
+    .swiper-slide {
+      display: flex; 
+      justify-content: center;
+      align-items: center;
+      font-size: 60px;
+    }
+
+    .pt1 {
+      background-image: url('src/ayamgoreng.jpg');
+      background-size: cover;      
+    }
+
+    .swiper-button-prev {
+      color: white;
+    }
+
+    .swiper-button-next {
+      color: white;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: black;
+    }
+
+    .toggle-button {
+      position: absolute;
+      top: 1.3rem;
+      display: none;
+      right: 1.2rem;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 21px;
+    }
+
+    .toggle-button .bar {
+      height: 3px;
+      width: 25px;
+      background-color: white;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .toggle-button {
+        display: flex;
+      }
+
+      .navbar-links {
+        display: none
+      }
+
+      .navbar {
+        flex-direction: column;
+      }
+
+      .navbar-links .ul {
+        flex-direction: column;
+      }
+
+      .navbar-links.active {
+        display: flex;
+      }
     }
 
   </style>
@@ -20,17 +86,26 @@
   <body class="bg-gray-100">
 
     <!-- NAVIGATION BAR -->
-    <div class="p-2 fixed w-full" id="navbar">
-      <nav class="lg:flex rounded-lg flex-row-reverse bg-gray-500 p-3 text-white shadow-lg">
-        <p class="px-2"><a href="#about-me">About Me</a></p>
-        <p class="px-2"><a href="#portfolio">Portfolio</a></p>
-        <p class="px-2"><a href="#contact-me">Contact Me</a></p>
-        <h1 class="mr-auto"><a href="#introduction">Hafizuddin Sharif</a></h1>
+    <div class="p-2 fixed w-full z-10" id="navbar">
+      <nav class="flex rounded-lg bg-gray-500 p-3 text-white shadow-lg justify-between navbar">
+        <div><a href="#introduction">HAFIZUDDIN SHARIF</a></div>
+        <button class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <div class="navbar-links">
+          <ul class="lg:flex">
+            <li class="px-2 py-2 lg:py-0"><a href="#about-me">About Me</a></li>
+            <li class="px-2 py-2 lg:py-0"><a href="#portfolio">Portfolio</a></li>
+            <li class="px-2 py-2 lg:py-0"><a href="#contact-me">Contact Me</a></li>
+          </ul>
+        </div>
       </nav>
     </div>
 
     <!-- INTRODUCTION SECTION -->
-    <div class="text-center h-screen flex mx-10" id="introduction">
+    <div class="text-center h-screen flex lg:mx-10" id="introduction">
       <div class="w-full lg:w-full flex flex-col lg:flex-row my-auto">
         <div class="text-center lg:w-1/2 my-auto">
           <img class="w-full lg:w-3/4 mx-auto" src="src/visual data-pana.svg" alt="someone standing with screens">
@@ -44,9 +119,9 @@
     </div>
 
     <!-- ABOUT ME SECTION -->
-    <div class="text-center h-screen mx-10 flex flex-col-reverse lg:flex-row" id="about-me">
+    <div class="text-center h-screen mx-10 flex flex-col-reverse justify-center lg:flex-row" id="about-me">
       <div class="inline-block px-5 lg:m-auto bg-gray-300 rounded-lg shadow-lg">
-          <h1 class="text-2xl text-gray-700 font-serif font-bold py-5">About Me</h1>
+          <h1 class="text-2xl text-gray-700 font-serif font-bold py-5">ABOUT ME</h1>
           <p class="block text-gray-700 text-sm text-justify pb-5 lg:text-xl">
             My name is Hafizuddin Sharif Bin Umar Sharif, a web developer based in Malaysia.
             I am currently taking Computer Science course in University of Edinburgh. An aspiring front-end developer actively seeking for 
@@ -60,35 +135,84 @@
 
 
     <!-- PORTFOLIO -->
-    <!-- <div class="text-center flex h-screen m-auto" id="portfolio">
-      <div class="inline-block px-5 mx-10 lg:m-auto bg-gray-300 rounded-lg shadow-lg">
-        <h1 class="text-2xl text-gray-700 font-serif font-bold py-5">Portfolio</h1>
-        <div class="flex flex-row lg:justify-around overflow-hidden">
-          <div class="">
-            <a href="https://hafizuddinsharif.github.io/linktree-ripoff/">
-              <img class="shadow-xl" src="src/linktree-copy-snip.jpg" alt="My Linktree copy website">
-            </a>
-            <p class="pt-5 cursor-pointer">
-              <a class="block text-gray-700 text-xl" href="https://hafizuddinsharif.github.io/linktree-ripoff/">Linktree copy</a>
-            </p>
+    <div class="h-screen" id="portfolio">
+      <h1 class="text-2xl text-gray-700 font-serif font-bold pb-6 pt-32 lg:pt-20 text-center">PORTFOLIO</h1>
+      <!-- Slider main container -->
+      <div class="swiper-container h-4/6 bg-gray-500">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="flex flex-col bg-gray-100 lg:w-2/6 lg:h-5/6 lg:mx-10 w-5/6 h-4/6 rounded-lg">
+              <img class="lg:w-100% rounded-lg" src="src/simon-game.png" alt="a picture of simon game">
+              <div class="my-auto mx-4">
+                <div class="text-lg font-serif font-bold">The Simon Game</div>
+                <div class="text-sm">A simple game created using Vanilla JS</div>
+                <div class="flex justify-around pt-2">
+                  <a class="text-base border-2 border-gray-500 rounded-full px-2 hover:bg-gray-700 hover:text-white transition-all duration-500" 
+                    href="https://github.com/HafizuddinSharif/SimonGame" 
+                    target="_blank">View code</a>
+                  <a class="text-base border-2 border-gray-500 rounded-full px-2 hover:bg-gray-700 hover:text-white transition-all duration-500" 
+                    href="https://hafizuddinsharif.github.io/SimonGame/" 
+                    target="_blank">Visit page</a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="">
-            <a href="https://hafizuddinsharif.github.io/SimonGame/">
-              <img class="h-40 shadow-xl" src="src/simon-game-snip.jpg" alt="Simon game with vanilla javascript" >
-            </a>
-            <p class="" >
-              <a class="block text-gray-700 text-xl" href="https://hafizuddinsharif.github.io/SimonGame/">Simon game</a>
-            </p>
+          <div class="swiper-slide">
+            <div class="flex flex-col bg-gray-100 lg:w-2/6 lg:h-5/6 lg:mx-10 w-5/6 h-4/6 rounded-lg">
+              <img class="lg:w-100% rounded-lg" src="src/si-hidayah-report.png" alt="a picture of simon game">
+              <div class="my-auto mx-4">
+                <div class="text-lg font-serif font-bold">Sekolah Islam Hidayah Report System</div>
+                <div class="text-sm">Created using EJS, Express JS and MySQL. Deployed on Heroku. Not for public</div>
+                <div class="flex justify-around pt-2">
+                  <a class="text-base border-2 border-gray-500 rounded-full px-2 hover:bg-gray-700 hover:text-white transition-all duration-500" 
+                    href="https://github.com/HafizuddinSharif/SistemAduanSIHidayah" 
+                    target="_blank">View code</a>
+                  <a class="text-base border-2 border-gray-500 rounded-full px-2 hover:bg-gray-700 hover:text-white transition-all duration-500" 
+                    href="https://sihidayah-aduan.herokuapp.com/aduan" 
+                    target="_blank">Visit page</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="flex flex-col bg-gray-100 lg:w-2/6 lg:h-5/6 lg:mx-10 w-5/6 h-4/6 rounded-lg">
+              <img class="lg:w-100% rounded-lg" src="src/simple-e-commerce.png" alt="a picture of simon game">
+              <div class="my-auto mx-4">
+                <div class="text-lg font-serif font-bold">Simple E-Commerce</div>
+                <div class="text-sm">Created using EJS, Express JS. Deployed on Heroku. Purely front-end.</div>
+                <div class="flex justify-around pt-2">
+                  <a class="text-base border-2 border-gray-500 rounded-full px-2 hover:bg-gray-700 hover:text-white transition-all duration-500" 
+                    href="https://github.com/HafizuddinSharif/interview-case-study" 
+                    target="_blank">View code</a>
+                  <a class="text-base border-2 border-gray-500 rounded-full px-2 hover:bg-gray-700 hover:text-white transition-all duration-500" 
+                    href="https://shopping-cart-supplycart.herokuapp.com/" 
+                    target="_blank">Visit page</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev invisible lg:visible"></div>
+        <div class="swiper-button-next invisible lg:visible"></div>
+
+        <!-- If we need scrollbar -->
+        <!-- <div class="swiper-scrollbar"></div> -->
+
       </div>
-      </div>
-    </div> -->
+
+    </div>
 
     <!-- CONTACT SECTION -->
-    <div class="h-screen flex flex-col lg:flex-row mt-40 lg:mt-0" id="contact-me">
+    <div class="h-screen flex flex-col justify-center lg:flex-row mt-40 lg:mt-0" id="contact-me">
       <img class="lg:w-1/2 lg:mx-10 lg:m-auto" src="src/search-engines-amico.svg" alt="someone standing with screens">
-      <div class="m-auto">
+      <div class="mx-auto lg:m-auto">
           <h1 class="text-2xl text-gray-700 font-serif font-bold pb-5">Contact Me</h1>
           <div class="flex flex-col">
             <!-- LINKEDIN -->
@@ -125,18 +249,18 @@
 
     <!-- FOOTER -->
     <footer class="text-center bg-gray-500" id="footer">
-      <p class="text-white py-3">Hafizuddin Sharif 2020</p>
+      <p class="text-white py-3">Hafizuddin Sharif 2021 | Made with TailwindCSS</p>
     </footer>
 
     
 
     <script>
       var personalTitle = document.getElementById("personal-title")
-      personalTitle.classList.add('special')
+      personalTitle.classList.add('fade')
     
       var count = 0
 
-      var title = ["Hafizuddin Sharif", "a student", "a volleyball player", "a youtuber"]
+      var title = ["a software engineer", "a volleyball player", "a youtuber", "Hafizuddin Sharif"]
 
       setInterval(function () {
         personalTitle.style.opacity = 1
@@ -153,7 +277,41 @@
         } , 2000)
         
       }, 3000)
+
+      const toggleButton = document.getElementsByClassName('toggle-button')[0]
+      const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+      toggleButton.addEventListener('click', () => {
+        navbarLinks.classList.toggle('active')
+      } )
       
+    </script>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+      const swiper = new Swiper('.swiper-container', {
+        // Optional parameters
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+          color: 'black'
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        // scrollbar: {
+        //   el: '.swiper-scrollbar',
+        // },
+      });
     </script>
 
   </body>
