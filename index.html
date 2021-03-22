@@ -9,80 +9,93 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hafizuddin Sharif</title>
-  </head>
 
-  <style type="text/css">
+    <style type="text/css">
       
-    .fade {
-      opacity: 0;
-      transition: opacity 1.0s ease-in;
-    }
-
-    .swiper-slide {
-      display: flex; 
-      justify-content: center;
-      align-items: center;
-      font-size: 60px;
-    }
-
-    .pt1 {
-      background-image: url('src/ayamgoreng.jpg');
-      background-size: cover;      
-    }
-
-    .swiper-button-prev {
-      color: white;
-    }
-
-    .swiper-button-next {
-      color: white;
-    }
-
-    .swiper-pagination-bullet-active {
-      background-color: black;
-    }
-
-    .toggle-button {
-      position: absolute;
-      top: 1.3rem;
-      display: none;
-      right: 1.2rem;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 30px;
-      height: 21px;
-    }
-
-    .toggle-button .bar {
-      height: 3px;
-      width: 25px;
-      background-color: white;
-      border-radius: 10px;
-    }
-
-    @media (max-width: 600px) {
+      .fade {
+        opacity: 0;
+        transition: opacity 1.0s ease-in;
+      }
+  
+      img {
+         transform: translateX(50%);
+         opacity: 0;
+         transition: all 1000ms;
+      }
+  
+      .fade2 {
+        transform: translateX(0);
+        opacity: 1.0;
+        transition: all 1000ms;
+      }
+  
+      .swiper-slide {
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        font-size: 60px;
+      }
+  
+      .pt1 {
+        background-image: url('src/ayamgoreng.jpg');
+        background-size: cover;      
+      }
+  
+      .swiper-button-prev {
+        color: black;
+      }
+  
+      .swiper-button-next {
+        color: black;
+      }
+  
+      .swiper-pagination-bullet-active {
+        background-color: black;
+      }
+  
       .toggle-button {
-        display: flex;
-      }
-
-      .navbar-links {
-        display: none
-      }
-
-      .navbar {
+        position: absolute;
+        top: 1.3rem;
+        display: none;
+        right: 1.2rem;
         flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
       }
-
-      .navbar-links .ul {
-        flex-direction: column;
+  
+      .toggle-button .bar {
+        height: 3px;
+        width: 25px;
+        background-color: white;
+        border-radius: 10px;
       }
-
-      .navbar-links.active {
-        display: flex;
+  
+      @media (max-width: 800px) {
+        .toggle-button {
+          display: flex;
+        }
+  
+        .navbar-links {
+          display: none
+        }
+  
+        .navbar {
+          flex-direction: column;
+        }
+  
+        .navbar-links .ul {
+          flex-direction: column;
+        }
+  
+        .navbar-links.active {
+          display: flex;
+        }
       }
-    }
+  
+    </style>
 
-  </style>
+  </head>
 
   <body class="bg-gray-100">
 
@@ -137,14 +150,14 @@
 
     <!-- PORTFOLIO -->
     <div class="h-screen" id="portfolio">
-      <h1 class="text-2xl text-gray-700 font-serif font-bold pb-6 pt-32 lg:pt-20 text-center">PORTFOLIO</h1>
+      <h1 class="text-2xl font-serif font-bold pb-6 pt-32 lg:pt-20 text-center">PORTFOLIO</h1>
       <!-- Slider main container -->
-      <div class="swiper-container h-4/6 bg-gray-500">
+      <div class="swiper-container h-4/6">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides -->
           <div class="swiper-slide">
-            <div class="flex flex-col bg-gray-100 lg:w-2/6 lg:h-5/6 lg:mx-10 w-5/6 h-4/6 rounded-lg">
+            <div class="flex flex-col bg-gray-100 lg:w-2/6 lg:h-5/6 lg:mx-10 w-5/6 h-4/6 rounded-lg shadow-xl">
               <img class="lg:w-100% rounded-lg" src="src/simon-game.png" alt="a picture of simon game">
               <div class="my-auto mx-4">
                 <div class="text-lg font-serif font-bold">The Simon Game</div>
@@ -161,7 +174,7 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="flex flex-col bg-gray-100 lg:w-2/6 lg:h-5/6 lg:mx-10 w-5/6 h-4/6 rounded-lg">
+            <div class="flex flex-col bg-gray-100 lg:w-2/6 lg:h-5/6 lg:mx-10 w-5/6 h-4/6 rounded-lg shadow-xl">
               <img class="lg:w-100% rounded-lg" src="src/si-hidayah-report.png" alt="a picture of simon game">
               <div class="my-auto mx-4">
                 <div class="text-lg font-serif font-bold">Sekolah Islam Hidayah Report System</div>
@@ -178,7 +191,7 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="flex flex-col bg-gray-100 lg:w-2/6 lg:h-5/6 lg:mx-10 w-5/6 h-4/6 rounded-lg">
+            <div class="flex flex-col bg-gray-100 lg:w-2/6 lg:h-5/6 lg:mx-10 w-5/6 h-4/6 rounded-lg shadow-xl">
               <img class="lg:w-100% rounded-lg" src="src/simple-e-commerce.png" alt="a picture of simon game">
               <div class="my-auto mx-4">
                 <div class="text-lg font-serif font-bold">Simple E-Commerce</div>
@@ -212,7 +225,7 @@
 
     <!-- CONTACT SECTION -->
     <div class="h-screen flex flex-col justify-center lg:flex-row mt-40 lg:mt-0" id="contact-me">
-      <img class="lg:w-1/2 lg:mx-10 lg:m-auto" src="src/search-engines-amico.svg" alt="someone standing with screens">
+      <img class="lg:w-1/2 lg:mx-10 lg:m-auto" src="src/search-engines-amico.svg" alt="a laptop with searchbar popping out">
       <div class="mx-auto lg:m-auto">
           <h1 class="text-2xl text-gray-700 font-serif font-bold pb-5">Contact Me</h1>
           <div class="flex flex-col">
@@ -291,6 +304,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
+    <!-- SCRIPT FOR SLIDER -->
     <script>
       const swiper = new Swiper('.swiper-container', {
         // Optional parameters
@@ -314,6 +328,33 @@
         // },
       });
     </script>
+
+  <script defer>
+    const targets = document.querySelectorAll('img');
+
+    const lazyLoad = target => {
+      const io = new IntersectionObserver((entries, observer) => {
+        
+        entries.forEach(entry => {
+          console.log("Yeet")
+
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            const src = img.getAttribute('src');
+
+            img.setAttribute('src', src);
+            img.classList.add('fade2');
+
+            observer.disconnect();
+          }
+        })
+      })
+
+      io.observe(target)
+    }
+
+    targets.forEach(lazyLoad)
+  </script>
 
   </body>
 </html>
