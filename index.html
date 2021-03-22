@@ -18,13 +18,13 @@
       }
   
       img {
-         transform: translateX(50%);
+         transform: translateY(10%);
          opacity: 0;
          transition: all 1000ms;
       }
   
       .fade2 {
-        transform: translateX(0);
+        transform: translateY(0);
         opacity: 1.0;
         transition: all 1000ms;
       }
@@ -77,7 +77,7 @@
         }
   
         .navbar-links {
-          display: none
+          display: none;
         }
   
         .navbar {
@@ -112,7 +112,8 @@
           <ul class="lg:flex">
             <li class="px-2 py-2 lg:py-0"><a href="#about-me">About Me</a></li>
             <li class="px-2 py-2 lg:py-0"><a href="#portfolio">Portfolio</a></li>
-            <li class="px-2 py-2 lg:py-0"><a href="#contact-me">Contact Me</a></li>
+            <li class="px-2 py-2 lg:py-0"><a href="#tech-stack">Tech Stack</a></li>
+            <li class="px-2 py-2 lg:py-0"><a href="#contact-me">Contact & Links</a></li>
           </ul>
         </div>
       </nav>
@@ -139,12 +140,16 @@
           <p class="block text-gray-700 text-sm text-justify pb-5 lg:text-xl">
             My name is Hafizuddin Sharif Bin Umar Sharif, a web developer based in Malaysia.
             I am currently taking Computer Science course in University of Edinburgh. An aspiring front-end developer actively seeking for 
-          internships.</p>
+          internships. I am very passionate on creating websites or application that has great user interface (UI) and also user experience (UX).</p>
       </div>
       <img class="lg:w-1/2 mx-auto" src="src/files-sent-amico.svg" alt="someone standing with screens">
     </div>
 
     <!-- TECH STACK -->
+
+    <div class="h-screen" id="tech-stack">
+      <h1 class="text-2xl font-serif font-bold pb-6 pt-32 lg:pt-20 text-center">TECH STACK</h1>
+    </div>
 
 
 
@@ -227,7 +232,7 @@
     <div class="h-screen flex flex-col justify-center lg:flex-row mt-40 lg:mt-0" id="contact-me">
       <img class="lg:w-1/2 lg:mx-10 lg:m-auto" src="src/search-engines-amico.svg" alt="a laptop with searchbar popping out">
       <div class="mx-auto lg:m-auto">
-          <h1 class="text-2xl text-gray-700 font-serif font-bold pb-5">Contact Me</h1>
+          <h1 class="text-2xl text-gray-700 font-serif font-bold pb-5">Contact & Links</h1>
           <div class="flex flex-col">
             <!-- LINKEDIN -->
             <div class="flex">
@@ -336,7 +341,6 @@
       const io = new IntersectionObserver((entries, observer) => {
         
         entries.forEach(entry => {
-          console.log("Yeet")
 
           if (entry.isIntersecting) {
             const img = entry.target;
