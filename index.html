@@ -22,11 +22,21 @@
          opacity: 0;
          transition: all 1000ms;
       }
+
+      /* img {
+         transform: translateY(0);
+         opacity: 1;
+         transition: all 1000ms;
+      } */
   
       .fade2 {
         transform: translateY(0);
         opacity: 1.0;
         transition: all 1000ms;
+      }
+
+      .fade2.icon:hover {
+        transform: scale(1.5, 1.5);
       }
   
       .swiper-slide {
@@ -111,8 +121,8 @@
         <div class="navbar-links">
           <ul class="lg:flex">
             <li class="px-2 py-2 lg:py-0"><a href="#about-me">About Me</a></li>
-            <li class="px-2 py-2 lg:py-0"><a href="#portfolio">Portfolio</a></li>
             <li class="px-2 py-2 lg:py-0"><a href="#tech-stack">Tech Stack</a></li>
+            <li class="px-2 py-2 lg:py-0"><a href="#portfolio">Portfolio</a></li>       
             <li class="px-2 py-2 lg:py-0"><a href="#contact-me">Contact & Links</a></li>
           </ul>
         </div>
@@ -149,6 +159,22 @@
 
     <div class="h-screen" id="tech-stack">
       <h1 class="text-2xl font-serif font-bold pb-6 pt-32 lg:pt-20 text-center">TECH STACK</h1>
+      <div class="h-4/6 flex justify-center">
+        <div class="grid grid-cols-3 lg:w-1/2 w-full">
+          <img class="w-16 m-auto icon" src="src/tech-logo/html5.svg" alt="html5 logo">
+          <img class="w-16 m-auto icon" src="src/tech-logo/css3.svg" alt="css3 logo">
+          <img class="w-16 m-auto icon" src="src/tech-logo/javascript.svg" alt="javascript logo">
+          <img class="w-16 m-auto icon" src="src/tech-logo/java.svg" alt="java logo">
+          <img class="w-16 m-auto icon" src="src/tech-logo/python.svg" alt="python logo">
+          <img class="w-16 m-auto icon" src="src/tech-logo/tailwindcss.svg" alt="tailwind css logo">
+          <img class="w-16 m-auto icon" src="src/tech-logo/git.svg" alt="git logo">
+          <img class="w-16 m-auto icon" src="src/tech-logo/github.svg" alt="github logo">
+          <img class="w-16 m-auto icon" src="src/tech-logo/express.svg" alt="express js logo">
+          <img class="w-16 m-auto icon" src="" alt="">
+          <img class="w-16 m-auto icon" src="src/tech-logo/c.svg" alt="c language logo">
+        </div>
+      </div>
+      
     </div>
 
 
@@ -161,23 +187,6 @@
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides -->
-          <div class="swiper-slide">
-            <div class="flex flex-col bg-gray-100 lg:w-2/6 lg:h-5/6 lg:mx-10 w-5/6 h-4/6 rounded-lg shadow-xl">
-              <img class="lg:w-100% rounded-lg" src="src/simon-game.png" alt="a picture of simon game">
-              <div class="my-auto mx-4">
-                <div class="text-lg font-serif font-bold">The Simon Game</div>
-                <div class="text-sm">A simple game created using Vanilla JS</div>
-                <div class="flex justify-around pt-2">
-                  <a class="text-base border-2 border-gray-500 rounded-full px-2 hover:bg-gray-700 hover:text-white transition-all duration-500" 
-                    href="https://github.com/HafizuddinSharif/SimonGame" 
-                    target="_blank">View code</a>
-                  <a class="text-base border-2 border-gray-500 rounded-full px-2 hover:bg-gray-700 hover:text-white transition-all duration-500" 
-                    href="https://hafizuddinsharif.github.io/SimonGame/" 
-                    target="_blank">Visit page</a>
-                </div>
-              </div>
-            </div>
-          </div>
           <div class="swiper-slide">
             <div class="flex flex-col bg-gray-100 lg:w-2/6 lg:h-5/6 lg:mx-10 w-5/6 h-4/6 rounded-lg shadow-xl">
               <img class="lg:w-100% rounded-lg" src="src/si-hidayah-report.png" alt="a picture of simon game">
@@ -212,6 +221,23 @@
               </div>
             </div>
           </div>
+          <div class="swiper-slide">
+            <div class="flex flex-col bg-gray-100 lg:w-2/6 lg:h-5/6 lg:mx-10 w-5/6 h-4/6 rounded-lg shadow-xl">
+              <img class="lg:w-100% rounded-lg" src="src/simon-game.png" alt="a picture of simon game">
+              <div class="my-auto mx-4">
+                <div class="text-lg font-serif font-bold">The Simon Game</div>
+                <div class="text-sm">A simple game created using Vanilla JS</div>
+                <div class="flex justify-around pt-2">
+                  <a class="text-base border-2 border-gray-500 rounded-full px-2 hover:bg-gray-700 hover:text-white transition-all duration-500" 
+                    href="https://github.com/HafizuddinSharif/SimonGame" 
+                    target="_blank">View code</a>
+                  <a class="text-base border-2 border-gray-500 rounded-full px-2 hover:bg-gray-700 hover:text-white transition-all duration-500" 
+                    href="https://hafizuddinsharif.github.io/SimonGame/" 
+                    target="_blank">Visit page</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- If we need pagination -->
@@ -237,28 +263,28 @@
             <!-- LINKEDIN -->
             <div class="flex">
               <img class="w-10 mb-3" src="src/linkedin.svg" alt="linkedin logo">
-              <a class="my-auto ml-4" href="https://www.linkedin.com/in/hafizuddin-sharif-umar-sharif">
+              <a class="my-auto ml-4" href="https://www.linkedin.com/in/hafizuddin-sharif-umar-sharif" target="_blank">
                 <h2 class="hover:underline">Hafizuddin Sharif Umar Sharif<img class="ml-2 w-4 mb-1 inline-block" src="src/external-link-alt-solid.svg" alt="link to linkedin"></h2>
               </a>  
             </div>
             <!-- GITHUB -->
             <div class="flex">
               <img class="w-10 mb-3" src="src/github.svg" alt="github logo">
-              <a class="my-auto ml-4" href="https://github.com/HafizuddinSharif">
+              <a class="my-auto ml-4" href="https://github.com/HafizuddinSharif" target="_blank">
                 <h2 class="hover:underline">HafizuddinSharif<img class="ml-2 w-4 mb-1 inline-block" src="src/external-link-alt-solid.svg" alt="link to linkedin"></h2>
               </a>  
             </div>
             <!-- INSTAGRAM -->
             <div class="flex">
               <img class="w-10 mb-3" src="src/instagram.svg" alt="instagram logo">
-              <a class="my-auto ml-4" href="http://www.instagram.com/sharippu_">
+              <a class="my-auto ml-4" href="http://www.instagram.com/sharippu_" target="_blank">
                 <h2 class="hover:underline">sharippu_ <img class="ml-2 w-4 mb-1 inline-block" src="src/external-link-alt-solid.svg" alt="link to linkedin"></h2>
               </a>  
             </div>
             <!-- YOUTUBE -->
             <div class="flex">
               <img class="w-10" src="src/youtube.svg" alt="youtube logo">
-              <a class="my-auto ml-4" href="http://www.youtube.com/c/HafizuddinSharif">
+              <a class="my-auto ml-4" href="http://www.youtube.com/c/HafizuddinSharif" target="_blank">
                 <h2 class="hover:underline">Hafizuddin Sharif <img class="ml-2 w-4 mb-1 inline-block" src="src/external-link-alt-solid.svg" alt="link to linkedin"></h2>
               </a>  
             </div>
